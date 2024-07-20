@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { ProductoListaComponent } from "./producto-lista/producto-lista.component";
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
