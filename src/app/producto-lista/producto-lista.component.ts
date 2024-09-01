@@ -3,6 +3,7 @@ import { Producto } from '../producto';
 import { ProductoService } from '../producto.service';
 import { NgFor } from '@angular/common';
 import { Router } from '@angular/router';
+import { error } from 'node:console';
 
 @Component({
   selector: 'app-producto-lista',
@@ -33,6 +34,15 @@ export class ProductoListaComponent {
 
     editarProducto(id:number){
       this.enrutador.navigate(['editar-producto',id]);
+    }
+
+    eliminarProducto(id: number){
+          this.productoServicio.eliminarProducto(id).subscribe(
+            {
+              next:(datos) => this.obtenerProductos(),
+              error:(errores) => console.log(errores)
+            }
+          );
     }
     
     
